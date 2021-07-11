@@ -1,0 +1,21 @@
+<div class="flex justify-center">
+  <main class="text-center m-5 rounded-md shadow p-10 bg-gray-50">
+    <h2 class="font-bold text-2xl">Typing Game</h2>
+    <p class="my-4 text-lg">
+    <span 
+    [class]="compare(letter,enteredText[i])"
+    *ngFor="let letter of randomText.split(''); let i=index"
+    >{{letter}}</span></p>
+
+    <input type="text" name="typedText" 
+    (input)="onText($event)"
+    class="my-4  placeholder-gray-400 placeholder-opacity-75" 
+    placeholder="type the above sentence"
+    >
+
+    <p *ngIf="randomText === enteredText" class="text-xl font-bold text-green-400">
+      Success!
+    </p>
+    
+  </main>
+</div>
